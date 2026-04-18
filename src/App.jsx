@@ -29,6 +29,12 @@ const tipPerPerson = NumberPPl > 0
 const totalPerPerson = NumberPPl > 0
   ? ((bill + tipTotal) / NumberPPl).toFixed(2)
   : 0;
+
+  const handleReset = () => {
+  setBill(0);
+  setSelected(0);
+  setNumberPPl(0);
+};
   return (
     <>
       <section className="min-h-screen w-full bgColr p-4 flex items-center font-mono">
@@ -128,7 +134,9 @@ const totalPerPerson = NumberPPl > 0
                   </div>
                 </div>
 
-                <button className="w-full text-black  bg-emerald-300 p-2 rounded-xl mt-auto font-bold text-xl opacity-65 cursor-pointer hover:opacity-80">
+                <button
+                onClick={()=> handleReset()}
+                 className="w-full text-black  bg-emerald-300 p-2 rounded-xl mt-auto font-bold text-xl opacity-65 cursor-pointer hover:opacity-80">
                   RESET
                 </button>
               </div>
